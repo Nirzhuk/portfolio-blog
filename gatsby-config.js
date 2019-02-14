@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Nirzhuk Blog`,
-    author: `NIrzhuk`,
+    author: `Nirzhuk`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://nirzhuk.me`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `nirzhuk`,
     },
   },
   plugins: [
