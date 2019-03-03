@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-
 .ascii-title {
   font-family: 'Roboto Mono', monospace;
   font-size: 2.5em;
   text-transform: uppercase;
   color: #F9F9F9;
-  letter-spacing: 10px
+  letter-spacing: 10px;
+  margin: 0;
 }
 .logo-svg {
   width: 360px;
 }
 .logo {
+  height:20vh;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 	svg {
 	fill: none;
 	path {
