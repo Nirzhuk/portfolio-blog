@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './style.scss';
 import anime from 'animejs';
+import styled from 'styled-components'
+
 
 export default class Logo extends Component {
   componentDidMount(){

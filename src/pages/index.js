@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import GlitchText from "../components/GlitchText"
 import "./indexPage/style.scss";
 class IndexPage extends React.Component {
   render() {
@@ -14,7 +15,9 @@ class IndexPage extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <h1> Hola</h1>
+        <GlitchText size="24px"> Glitchy::</GlitchText>
+
+
       </Layout>
     )
   }

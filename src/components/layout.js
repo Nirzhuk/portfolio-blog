@@ -1,13 +1,21 @@
 import React from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+import Footer from './Footer';
+import styled from 'styled-components';
 
+const HeaderDiv  = styled.div`
+  height: 400px;
+  display:flex;
+  justify-content: center;
+  justify-items: center;
+` 
 const Header = () => {
   return (
-    <div>
+    <HeaderDiv>
       <Logo />
       <Navbar />
-    </div>
+    </HeaderDiv>
   )
 }
 class Layout extends React.Component {
@@ -18,11 +26,7 @@ class Layout extends React.Component {
       <div>
         <Header/>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer/>
       </div>
     )
   }
