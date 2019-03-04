@@ -5,13 +5,13 @@ import anime from 'animejs';
 export default class Logo extends Component {
   componentDidMount(){
     anime({
-      targets: '.logo',
+      targets: ".logo",
       duration: 400,
       loop: false,
 
     }).finished.then(() => {
       document.querySelector('.logo').classList.add('completed');
-    })
+    });
   }
   render() {
     return (

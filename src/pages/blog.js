@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
         <Bio />
         {posts.map(({ node }) => {
@@ -22,7 +22,7 @@ class BlogIndex extends React.Component {
           return (
             <div key={node.fields.slug}>
               <h3>
-                <Link style={{ boxShadow: `none` }} to={`${node.fields.slug}`}>
+                <Link style={{ boxShadow: 'none' }} to={`${node.fields.slug}`}>
                   {title}
                 </Link>
               </h3>
@@ -36,7 +36,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {

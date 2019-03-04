@@ -1,5 +1,4 @@
 
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1 align="center">
   Nirzhuk Portfolio
 </h1>

@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
           style={{
             display: `flex`,
             flexWrap: `wrap`,
-            justifyContent: `space-between`,
+            justifyContent: 'space-between',
             listStyle: `none`,
             padding: 0,
           }}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import './indexPage/style.scss';
+import "./indexPage/style.scss";
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
