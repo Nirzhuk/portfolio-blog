@@ -4,19 +4,13 @@ import Navbar from "./Navbar";
 import Footer from './Footer';
 import styled from 'styled-components';
 
-const HeaderDiv  = styled.div`
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  flex-direction: column;
-` 
+
 const Header = () => {
   return (
-    <HeaderDiv>
+    <div>
       <Logo />
       <Navbar />
-    </HeaderDiv>
+    </div>
   )
 }
 class Layout extends React.Component {
@@ -25,9 +19,9 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     return (
       <div>
-        <Header/>
-        <main>{children}</main>
-        <Footer/>
+        <Header />
+        {children}
+        <Footer />
       </div>
     )
   }

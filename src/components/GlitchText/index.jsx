@@ -4,13 +4,10 @@ import { glitchEffect } from './keyFrames';
 const primaryColor = '#fff';
 
 const GlitchText = styled.p`
-    position: relative;
-    margin: 0 auto;
     color: ${primaryColor};
     font-size: ${props => props.size || '24px'};
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     transform: scale3d(1,1,1);
@@ -25,7 +22,6 @@ const GlitchText = styled.p`
         overflow: hidden;
         color: ${primaryColor};
         clip: rect(0, 900px, 0, 0);
-
     }
 
     &::before {
@@ -39,7 +35,6 @@ const GlitchText = styled.p`
         text-shadow: -2px 0 red;
         animation: ${glitchEffect} 2s infinite linear alternate-reverse;
     }
-
 `;
 
 export default GlitchText;

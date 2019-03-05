@@ -1,11 +1,25 @@
 import React from 'react';
 import Link from '../Link'
+import styled from 'styled-components';
 
+const NavLink = styled(Link)`
+margin-right: 10px;
+margin-left: 10px;
+`;
 
-export default function Header() {
+const NavbarContainer = styled.div`
+width: 100%;
+text-align: center;
+`;
+
+const Navbar = () => {
     return (
-        <div>
-            <Link to='blog'>Blog</Link>
-        </div>
+        <NavbarContainer>
+            <NavLink to='blog'>Blog</NavLink>
+            <NavLink to='work'>Work</NavLink>
+            <NavLink to='about'>About</NavLink>
+            <NavLink to='contact'>Contact</NavLink>
+        </NavbarContainer>
     )
 }
+export default Navbar;

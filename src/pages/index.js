@@ -3,7 +3,9 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GlitchText from "../components/GlitchText"
+import Content from './indexPage/Content';
 import "./indexPage/style.scss";
+
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props
@@ -23,9 +25,7 @@ class IndexPage extends React.Component {
             `Game Developer`,
           ]}
         />
-        <GlitchText size="24px"> Glitchy:: </GlitchText>
-
-
+        <Content />
       </Layout>
     )
   }
