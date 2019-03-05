@@ -6,9 +6,10 @@ import styled from 'styled-components';
 
 const HeaderDiv  = styled.div`
   height: 400px;
-  display:flex;
+  display: flex;
   justify-content: center;
   justify-items: center;
+  flex-direction: column;
 ` 
 const Header = () => {
   return (

@@ -19,7 +19,7 @@ export default class Logo extends Component {
     return (
       <React.Fragment>
       <div id="logo" className="logo">
-        <p className="ascii-title"><span className="web">Web </span> <span className="developer">Developer</span> Fullstack</p>
+        <p className="ascii-title">John R. Serrano Perez</p>
         <svg viewBox="0 0 400 50" className="logo-svg">
           <g fill="none" fillRule="evenodd" stroke="currentColor" strokeWidth="0.5">
             <path d="M18.2,4.9l4.7,0.3c0,0.5-0.6,0.9-1.3,0.9v7.5h12.7l0.7-0.3l2.9,1.3c-0.1,0.2-0.3,0.4-0.5,0.5c-2.2,16.6-9.1,26.3-24.1,31.5

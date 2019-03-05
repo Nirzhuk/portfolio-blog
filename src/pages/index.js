@@ -12,10 +12,18 @@ class IndexPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title={`Index Page`}
+          keywords={[`Nirzhuk`,
+            `Blog`,
+            `JavaScript Developer`,
+            `React Developer`,
+            `Fullstack Developer`,
+            `Freelancer`,
+            `Unity Developer`,
+            `Game Developer`,
+          ]}
         />
-        <GlitchText size="24px"> Glitchy::</GlitchText>
+        <GlitchText size="24px"> Glitchy:: </GlitchText>
 
 
       </Layout>

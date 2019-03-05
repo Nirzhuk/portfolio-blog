@@ -1,7 +1,7 @@
 /* eslint-disable */
 module.exports = {
   siteMetadata: {
-    title: `Nirzhuk Blog`,
+    title: `Nirzhuk Portfolio`,
     author: `Nirzhuk`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://nirzhuk.me`,
