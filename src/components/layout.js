@@ -1,6 +1,9 @@
 import React from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+import Footer from './Footer';
+import styled from 'styled-components';
+
 
 const Header = () => {
   return (
@@ -16,13 +19,9 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`
     return (
       <div>
-        <Header/>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Header />
+        {children}
+        <Footer />
       </div>
     )
   }
