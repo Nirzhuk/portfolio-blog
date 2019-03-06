@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import GlitchText from "../components/GlitchText"
 import Content from './indexPage/Content';
 import "./indexPage/style.scss";
 
