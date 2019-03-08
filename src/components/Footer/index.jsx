@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import Link from '../Link'
+import { GitHub } from 'react-feather'
 const FooterContainer = styled.footer`
     width: 100%;
     text-align: center;
@@ -9,7 +10,7 @@ const FooterContainer = styled.footer`
     display:flex;
     justify-content:center;
     justify-items: center;
-    color: goldenrod;
+    color: gold;
     font-family: 'Roboto Mono', monospace;
     background: rgb(26, 36, 46);
 `
@@ -17,9 +18,8 @@ const FooterContainer = styled.footer`
 export default function Footer() {
     return (
         <FooterContainer>
-            <div>
-                © {new Date().getFullYear()} Nirzhuk
-            </div>
+            © {new Date().getFullYear()} Nirzhuk -
+            <Link href="https://github.com/Nirzhuk"><GitHub color="gold" /></Link>
         </FooterContainer>
     )
 }

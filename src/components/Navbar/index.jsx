@@ -9,7 +9,6 @@ margin-left: 10px;
 
 const NavbarContainer = styled.div`
 width: 100%;
-text-align: center;
 `;
 
 const Navbar = () => {
