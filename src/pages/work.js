@@ -2,13 +2,12 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "./indexPage/style.scss";
+import "../containers/indexPage/style.scss";
 
 class WorkPage extends React.Component {
     render() {
         const { data } = this.props
         const siteTitle = data.site.siteMetadata.title
-
         return (
             <Layout location={this.props.location} title={siteTitle}>
                 <SEO
@@ -23,7 +22,7 @@ class WorkPage extends React.Component {
                         `Game Developer`,
                     ]}
                 />
-                <h1 style={"color:#fff"}>WorkPage</h1>
+                <h1>WorkPage</h1>
             </Layout>
         )
     }
