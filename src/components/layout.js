@@ -2,8 +2,6 @@ import React from "react";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import Footer from './Footer';
-import styled from 'styled-components';
-
 
 const Header = () => {
   return (
@@ -15,14 +13,13 @@ const Header = () => {
 }
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { children } = this.props
     return (
-      <div>
+      <React.Fragment>
         <Header />
         {children}
         <Footer />
-      </div>
+      </React.Fragment>
     )
   }
 }
