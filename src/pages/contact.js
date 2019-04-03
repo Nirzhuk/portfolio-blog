@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "./indexPage/style.scss";
+import "../containers/indexPage/style.scss";
 
 class ContactPage extends React.Component {
     render() {
@@ -23,7 +23,7 @@ class ContactPage extends React.Component {
                         `Game Developer`,
                     ]}
                 />
-                <h1 style={"color:#fff"}>Contact page</h1>
+                <h1>Contact page</h1>
             </Layout>
         )
     }

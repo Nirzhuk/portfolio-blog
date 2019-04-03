@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "./indexPage/style.scss";
+import "../containers/indexPage/style.scss";
 
 class AboutPage extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class AboutPage extends React.Component {
         return (
             <Layout location={this.props.location} title={siteTitle}>
                 <SEO
-                    title={`Index Page`}
+                    title={`About Page`}
                     keywords={[`Nirzhuk`,
                         `Blog`,
                         `JavaScript Developer`,
@@ -23,7 +23,7 @@ class AboutPage extends React.Component {
                         `Game Developer`,
                     ]}
                 />
-                <h1 style={"color:#fff"}> About me page. My name is John, hi.</h1>
+                <h1> About me page. My name is John, hi.</h1>
             </Layout>
         )
     }
