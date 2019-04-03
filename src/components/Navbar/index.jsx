@@ -3,12 +3,12 @@ import Link from '../Link'
 import styled from 'styled-components';
 
 const NavLink = styled(Link)`
-margin-right: 10px;
-margin-left: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 `;
 
 const NavbarContainer = styled.div`
-width: 100%;
+    width: 100%;
 `;
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavbarContainer>
             <NavLink to='blog'>Blog</NavLink>
             <NavLink to='work'>Work</NavLink>
-            <NavLink to='about'>About</NavLink>
+            <NavLink to='games'>Games</NavLink>
             <NavLink to='contact'>Contact</NavLink>
         </NavbarContainer>
     )

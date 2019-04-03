@@ -3,7 +3,6 @@ import './style.scss';
 import anime from 'animejs';
 import Link from '../Link'
 
-
 export default class Logo extends Component {
   componentDidMount(){
     anime({
