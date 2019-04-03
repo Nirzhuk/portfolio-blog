@@ -10,6 +10,7 @@ const FooterContainer = styled.footer`
     text-align: center;
     width: 100%;
     bottom: 0;
+    position: absolute;
     padding: 30px 0 30px 0;
     color: gold;
     font-family: 'Roboto Mono', monospace;

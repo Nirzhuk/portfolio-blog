@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Content from '../containers/workPage/Content';
 import "../containers/indexPage/style.scss";
 
 class WorkPage extends React.Component {
@@ -22,7 +23,7 @@ class WorkPage extends React.Component {
             `Game Developer`,
           ]}
         />
-        <h1>WorkPage</h1>
+        <Content />
       </Layout>
     )
   }

@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavbarContainer>
             <NavLink to='blog'>Blog</NavLink>
             <NavLink to='work'>Work</NavLink>
-            <NavLink to='about'>About</NavLink>
+            <NavLink to='games'>Games</NavLink>
             <NavLink to='contact'>Contact</NavLink>
         </NavbarContainer>
     )

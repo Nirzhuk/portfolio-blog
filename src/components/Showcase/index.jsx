@@ -14,14 +14,15 @@ const Showcase = (props) => (
     </Link>
 );
 const TextTitle = styled.p`
-    font-size: 24px;
-    text-shadow: 0 2px 0 rgba(0,);
+    font-size: 18px;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.7);
+    text-transform: initial;
     font-family: 'Roboto Mono', monospace;
 `;
 const ShowcaseContainer = styled.div`
   max-width: 300px;
-  width: 300px;
-  height: 300px;
+  width: 325px;
+  height: 250px;
   position: relative;
   display: inline-block;
   color: white;
@@ -36,7 +37,7 @@ const ShowcaseContainer = styled.div`
 `;
 const HoverContent = styled.div`
     height: 100%;
-    line-height: 280px;
+    line-height: 225px;
     text-align: center;
     width: 100%;
     opacity: 0;
