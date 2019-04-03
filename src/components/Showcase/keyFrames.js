@@ -2,7 +2,7 @@ import { keyframes } from 'styled-components'
 
 const dissapearEffect = keyframes`
 0% {
-    background: rgba(17,17,27,0);
+    background: rgba(17,17,27,0.1);
     background-image: radial-gradient(rgba(255,255,255,0) 5%, transparent 0);
     background-size: 24px 24px;
 }
