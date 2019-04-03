@@ -9,10 +9,10 @@ const Content = () => {
         <ContentContainer>
             <GlitchText size="32px"> Work:: </GlitchText>
             <Paragraph width="500px">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Work previously done. All types of project except videogames.
             </Paragraph>
-            <Showcase to="blog" text="Lorem ipsum dolor sit amet consectetur" src="portfolio-preview/gatsby-portfolio.png" />
-            <Showcase text="Lorem ipsum dolor sit amet consectetur" src="portfolio-preview/gatsby-portfolio.png" />
+            <Showcase to="blog" text="Synergia App" src="portfolio-preview/test-project.jpg" />
+            <Showcase to="blog" text="Les meves ajudes" src="portfolio-preview/test-project.jpg" />
         </ContentContainer>
     )
 };
