@@ -8,6 +8,7 @@ import Link from '../Link'
 const AsciiTitle = styled.p`
   font-family: 'Share Tech Mono', monospace;
   text-transform: uppercase;
+  font-size: 2em;
   color: #F9F9F9; 
   letter-spacing: 10px;
   margin: 0;
@@ -15,15 +16,15 @@ const AsciiTitle = styled.p`
   0px 1px 0px rgba(255,255,255,0.15),
   1px 2px 0px rgba(255,255,255,0.15),
   2px 3px 0px rgba(255,255,255,0.15);
-  @media ${device.mobileS} {
+  @media ${device.mobile} {
       font-size: 1em;
-    }
-    @media ${device.desktop} {
-      font-size: 2em;
-    }
+  }
 `
 const LogoSVG = styled.svg`
   width: 750px;
+  @media ${device.mobile} {
+    width: auto;
+  }
 `
 const LogoContainer = styled.div`
   height: 200px;
