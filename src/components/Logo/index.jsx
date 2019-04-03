@@ -1,8 +1,27 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import './style.scss';
 import anime from 'animejs';
 import Link from '../Link'
+import device from '../../utils/devices'
 
+const AsciiTitle = styled.p`
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  color: #F9F9F9; 
+  letter-spacing: 10px;
+  margin: 0;
+  text-shadow:
+  0px 1px 0px rgba(255,255,255,0.15),
+  1px 2px 0px rgba(255,255,255,0.15),
+  2px 3px 0px rgba(255,255,255,0.15);
+  @media ${device.mobileS} {
+      font-size: 1em;
+    }
+    @media ${device.desktop} {
+      font-size: 2em;
+    }
+`
 export default class Logo extends Component {
   componentDidMount(){
     anime({
@@ -19,7 +38,7 @@ export default class Logo extends Component {
       <React.Fragment>
         <Link to="">
           <div id="logo" className="logo">
-          <p className="ascii-title">John R. Serrano Perez</p>
+          <AsciiTitle>John R. Serrano Perez</AsciiTitle>
           <svg viewBox="0 0 400 50" className="logo-svg">
             <g fill="none" fillRule="evenodd" stroke="currentColor" strokeWidth="0.5">
               <path d="M18.2,4.9l4.7,0.3c0,0.5-0.6,0.9-1.3,0.9v7.5h12.7l0.7-0.3l2.9,1.3c-0.1,0.2-0.3,0.4-0.5,0.5c-2.2,16.6-9.1,26.3-24.1,31.5
