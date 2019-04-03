@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import GatsbyImage from '../GatsbyImage'
 import Link from '../Link'
+import device from '../../utils/devices'
 
 const Showcase = (props) => (
     <Link to={props.to}>
@@ -39,6 +40,10 @@ const ShowcaseContainer = styled.div`
   .gatsby-image-wrapper {
       position: initial !important;
   }
+    @media ${device.mobile} {
+        margin: 0 0 24px 0;
+        width: 100%;
+    }
 `;
 const HoverContent = styled.div`
     height: 100%;

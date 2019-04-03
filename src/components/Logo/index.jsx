@@ -1,8 +1,55 @@
 import React, { Component } from 'react'
-import './style.scss';
+import styled from 'styled-components'
 import anime from 'animejs';
+import device from '../../utils/devices'
+import {blinkEffect} from './keyFrames'
 import Link from '../Link'
 
+const AsciiTitle = styled.p`
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #F9F9F9; 
+  letter-spacing: 10px;
+  margin: 0;
+  text-shadow:
+  0px 1px 0px rgba(255,255,255,0.15),
+  1px 2px 0px rgba(255,255,255,0.15),
+  2px 3px 0px rgba(255,255,255,0.15);
+  @media ${device.mobile} {
+      font-size: 1em;
+  }
+`
+const LogoSVG = styled.svg`
+  width: 750px;
+  @media ${device.mobile} {
+    width: auto;
+  }
+`
+const LogoContainer = styled.div`
+  height: 200px;
+  margin-top: 50px;
+	svg {
+	fill: none;
+	path {
+		transition: fill 2s ease-in-out;
+		fill: transparent;
+		stroke-width: 1px;
+	}
+ }
+	
+	&.completed{
+		svg{
+      filter: drop-shadow(0 -2px 3px rgba(255,215,0,0.1)) drop-shadow(0 0 2px rgba(255,215,0,0.2)) drop-shadow(0 0 0.3em rgba(255,215,0,0.3)) drop-shadow(0 0 0.5em  rgba(255, 68, 68, 0.7)) drop-shadow(0 0 0.1em rgba(255, 68, 68, 0.5));
+      animation: ${blinkEffect} linear infinite 5s;
+			path{
+        transition: fill 2s ease-in-out;
+        fill: gold;
+        stroke: none;
+			}   
+		}
+	}
+`;  
 export default class Logo extends Component {
   componentDidMount(){
     anime({
@@ -18,9 +65,9 @@ export default class Logo extends Component {
     return (
       <React.Fragment>
         <Link to="">
-          <div id="logo" className="logo">
-          <p className="ascii-title">John R. Serrano Perez</p>
-          <svg viewBox="0 0 400 50" className="logo-svg">
+          <LogoContainer className="logo">
+          <AsciiTitle>John R. Serrano Perez</AsciiTitle>
+          <LogoSVG viewBox="0 0 400 50">
             <g fill="none" fillRule="evenodd" stroke="currentColor" strokeWidth="0.5">
               <path d="M18.2,4.9l4.7,0.3c0,0.5-0.6,0.9-1.3,0.9v7.5h12.7l0.7-0.3l2.9,1.3c-0.1,0.2-0.3,0.4-0.5,0.5c-2.2,16.6-9.1,26.3-24.1,31.5
                 c-0.4-0.7-1.4-2-2.2-2.8c14.1-4.8,20.6-13.7,22.2-27H6.5v11.8H3.2v-15h15V4.9z"/>
@@ -45,8 +92,8 @@ export default class Logo extends Component {
                 c-2.1,0-3.8,1.7-3.8,3.8c0,2,1.7,3.8,3.8,3.8C346.2,12.2,347.8,10.4,347.8,8.4z"/>
               <path d="M353.6,23.4h39.6v3.4h-37.8c-0.3,0.5-0.9,0.8-1.5,0.9L353.6,23.4z"/>
             </g>
-          </svg>
-        </div>
+          </LogoSVG>
+        </LogoContainer>
         </Link>
       </React.Fragment>
     )
