@@ -1,15 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import GlitchText from '../../components/GlitchText';
 import Paragraph from '../../components/Typography/Paragraph';
 import Showcase from '../../components/Showcase';
-
-const ContentContainer = styled.div`
-    color: white;
-    padding-top: 90px;
-    padding-left: 50px;
-    margin: 0 auto;
-`;
+import ContentContainer from '../../components/StyledComponents/ContentContainer';
 
 const Content = () => {
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Link from '../Link'
 import { GitHub } from 'react-feather'
+
 const FooterContainer = styled.footer`
     display:flex;
     justify-content:center;

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { dissapearEffect } from './keyFrames'
 import GatsbyImage from '../GatsbyImage'
 import Link from '../Link'
 
