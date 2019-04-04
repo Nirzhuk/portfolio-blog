@@ -6,32 +6,46 @@ exports.createPages = ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+    `{
+      getPost: allMarkdownRemark(sort:  {order: DESC, fields: [frontmatter___date]},
+        filter: {fileAbsolutePath: {regex: "/content/blog/.*.md$/"}},
+        limit: 1000) {
+        edges {
+          node {
+          fileAbsolutePath
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
+      getPortfolio: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]},
+        filter: {fileAbsolutePath: {regex: "content/portfolio/.*.md$/"}}) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            id
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+            }
+          }
+        }
+      }
+    }
+    
     `
   ).then(result => {
     if (result.errors) {
       throw result.errors
     }
-
+    const postEdges = result.data.getPost.edges;
+    const portfolioEdges = result.data.getPortfolio.edges;
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = postEdges
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -54,6 +68,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    const fileNode = getNode(node.parent)
+    console.log(`\n`, fileNode.relativePath)
     createNodeField({
       name: `slug`,
       node,
