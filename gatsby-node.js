@@ -1,10 +1,12 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { generator } = require('./src/gastby/PageGenerators')
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const portfolioPage = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
     `{
       getPost: allMarkdownRemark(sort:  {order: DESC, fields: [frontmatter___date]},
@@ -26,17 +28,19 @@ exports.createPages = ({ graphql, actions }) => {
         filter: {fileAbsolutePath: {regex: "content/portfolio/.*.md$/"}}) {
         edges {
           node {
-            excerpt(pruneLength: 250)
-            id
+            fileAbsolutePath
+            fields {
+              slug
+            }
             frontmatter {
               title
               date(formatString: "MMMM DD, YYYY")
+              desc
             }
           }
         }
       }
     }
-    
     `
   ).then(result => {
     if (result.errors) {
@@ -44,22 +48,31 @@ exports.createPages = ({ graphql, actions }) => {
     }
     const postEdges = result.data.getPost.edges;
     const portfolioEdges = result.data.getPortfolio.edges;
-    // Create blog posts pages.
-    const posts = postEdges
 
+    const posts = postEdges;
+    const projects = portfolioEdges;
+
+    projects.forEach((project, index) => {
+      generator({
+        type: createPage,
+        node: project,
+        template: portfolioPage,
+        config: { prefix: 'project' }
+      })
+    })
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
+      const pagination = { next, previous }
+      generator({
+        type: createPage,
+        node: post,
+        template: blogPost,
+        extraContext: { pagination },
+        config: { prefix: 'blog' }
       })
     })
+
   })
 }
 
@@ -68,8 +81,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-    const fileNode = getNode(node.parent)
-    console.log(`\n`, fileNode.relativePath)
     createNodeField({
       name: `slug`,
       node,
