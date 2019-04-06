@@ -1,6 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { generator } = require('./src/gastby/PageGenerators')
+const { generator } = require('./src/gastby/PageGenerators');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -9,7 +9,8 @@ exports.createPages = ({ graphql, actions }) => {
   const portfolioPage = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
     `{
-      getPost: allMarkdownRemark(sort:  {order: DESC, fields: [frontmatter___date]},
+      getPost: allMarkdownRemark(
+        sort:  {order: DESC, fields: [frontmatter___date]},
         filter: {fileAbsolutePath: {regex: "/content/blog/.*.md$/"}},
         limit: 1000) {
         edges {
@@ -24,7 +25,8 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-      getPortfolio: allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]},
+      getPortfolio: allMarkdownRemark(
+        sort: {order: DESC, fields: [frontmatter___date]},
         filter: {fileAbsolutePath: {regex: "content/portfolio/.*.md$/"}}) {
         edges {
           node {
