@@ -54,7 +54,7 @@ class ProjectPageTemplate extends React.Component {
 export default ProjectPageTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ProjectBySlug($slug: String!) {
     site {
       siteMetadata {
         title
