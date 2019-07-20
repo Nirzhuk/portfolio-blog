@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Nirzhuk Portfolio`,
     author: `Nirzhuk`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Personal website of Joan Rafael 'Nirzhuk' Serrano Perez`,
     siteUrl: `https://nirzhuk.me`,
     social: {
       twitter: `nirzhuk`,

@@ -22,10 +22,12 @@ const TextTitle = styled.p`
     position: absolute;
     z-index: 3;
     width: 100%;
+    @media ${device.mobile}{
+        margin-top: -25px;
+    }
 `;
 const ShowcaseContainer = styled.div`
-  max-width: 300px;
-  width: 600px;
+  width: 320px;
   padding: 16px;
   height: 175px;
   position: relative;
@@ -42,7 +44,8 @@ const ShowcaseContainer = styled.div`
   }
     @media ${device.mobile} {
         margin: 0 0 24px 0;
-        width: 100%;
+        padding: 16px 0 16px 0;
+        width: -webkit-fill-available;
     }
 `;
 const HoverContent = styled.div`
@@ -60,6 +63,25 @@ const HoverContent = styled.div`
         transition: opacity 1.5s;
         
         &:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            width: 150%;
+            height: 150%;
+            left: -50px;
+            background: rgba(17,17,27,0.8);
+            background-image: radial-gradient(rgba(255,255,255,0.5) 5%, transparent 0);
+            background-size: 24px 24px;
+        }
+    }
+    @media ${device.mobile} {
+        align-items: start;
+        margin-top: 175px;
+        opacity: 1;
+    }
+    &:after {
+        @media ${device.mobile} {
+            margin-top: 180px;
             content: '';
             position: absolute;
             top: -50px;
