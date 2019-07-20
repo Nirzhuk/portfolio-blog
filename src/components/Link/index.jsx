@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import device from '../../utils/devices';
 
 const CustomLink = styled(Link)`
     text-decoration: none;
@@ -13,6 +14,7 @@ const CustomLink = styled(Link)`
 
     &:hover {
     text-shadow: -3px -2px 0px  blue,3px 2px 0px red;
-}
+    }
+
 `;
 export default CustomLink;

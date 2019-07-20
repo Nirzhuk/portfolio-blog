@@ -9,6 +9,7 @@ class WorkPage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const projects = data.allMarkdownRemark.edges
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -23,7 +24,7 @@ class WorkPage extends React.Component {
             `Game Developer`,
           ]}
         />
-        <Content />
+        <Content projects={projects} />
       </Layout>
     )
   }
@@ -31,12 +32,30 @@ class WorkPage extends React.Component {
 
 export default WorkPage
 
-
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
+      }
+    }
+    allMarkdownRemark(
+      sort: {order: DESC, fields: [frontmatter___date]},
+      filter: {fileAbsolutePath: {regex: "content/portfolio/.*.md$/"}}) {
+      edges {
+        node {
+          fileAbsolutePath
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            desc
+            imagePreview
+            techs
+          }
+        }
       }
     }
   }

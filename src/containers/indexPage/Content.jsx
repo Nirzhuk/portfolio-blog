@@ -1,18 +1,16 @@
 import React from 'react';
 import GlitchText from '../../components/GlitchText';
 import Paragraph from '../../components/Typography/Paragraph';
-import Showcase from '../../components/Showcase';
 import ContentContainer from '../../components/StyledComponents/ContentContainer';
 
 const Content = () => {
-    return (
-        <ContentContainer>
-            <GlitchText size="32px"> Who I am:: </GlitchText>
-            <Paragraph width="980px">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quas modi repudiandae tempora est. Obcaecati dolores iusto quia accusantium quo porro placeat culpa quae. Quo omnis repellendus quae labore minima.
-            </Paragraph>
-        </ContentContainer>
-    )
+  return (
+    <ContentContainer>
+      <GlitchText size="32px"> Who I am:: </GlitchText>
+      <Paragraph width="980px">My name is Joan Rafael Serrano Perez. I'm actually a Fullstack Developer working and living on Barcelona. </Paragraph>
+      <Paragraph width="980px">Please, enjoy my portfolio, I tried something different. </Paragraph>
+    </ContentContainer>
+  )
 };
 
 export default Content;

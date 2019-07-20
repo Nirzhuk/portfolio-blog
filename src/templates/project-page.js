@@ -7,45 +7,20 @@ import SEO from "../components/seo"
 
 class ProjectPageTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.markdownRemark;
+    const { date, title, techs } = post.frontmatter;
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1>{post.frontmatter.title}</h1>
+        <SEO title={title} description={post.excerpt} />
+        <h1>{title}</h1>
         <p>
-          {post.frontmatter.date}
+          {date}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: 'space-between',
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        <p>{techs}</p>
       </Layout>
     )
   }
@@ -68,6 +43,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        techs
       }
     }
   }

@@ -22,7 +22,7 @@ class BlogIndex extends React.Component {
           return (
             <div key={node.fields.slug}>
               <h3>
-                <Link style={{ boxShadow: 'none' }} to={`${node.fields.slug}`}>
+                <Link style={{ boxShadow: 'none' }} to={`blog${node.fields.slug}`}>
                   {title}
                 </Link>
               </h3>
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC },filter: {fileAbsolutePath: {regex: "/content/blog/.*.md$/"}}) {
       edges {
         node {
           excerpt

@@ -8,7 +8,7 @@ import "../containers/indexPage/style.scss";
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
+    const siteTitle = data.site.siteMetadata.title ? data.site.siteMetadata.title : 'Nirzhuk Portfolio';
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
