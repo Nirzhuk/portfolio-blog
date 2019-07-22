@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
 import Link from '../Link'
 import BurgerButton from './burgerButton';
-=======
 import device from '../../utils/devices';
->>>>>>> f1162b7... Project dynamic
 
 const NavLink = styled(Link)`
     margin-right: 10px;
@@ -28,14 +25,14 @@ const NavbarContainer = styled.div`
 `;
 
 const Navbar = () => {
-    return (
-        <NavbarContainer>
-            <BurgerButton />
-            <NavLink to='blog'>Blog</NavLink>
-            <NavLink to='work'>Work</NavLink>
-            <NavLink to='games'>Games</NavLink>
-            <NavLink to='contact'>Contact</NavLink>
-        </NavbarContainer>
-    )
+  return (
+    <NavbarContainer>
+      
+      <NavLink to='blog'>Blog</NavLink>
+      <NavLink to='work'>Work</NavLink>
+      <NavLink to='games'>Games</NavLink>
+      <NavLink to='contact'>Contact</NavLink>
+    </NavbarContainer>
+  )
 }
 export default Navbar;

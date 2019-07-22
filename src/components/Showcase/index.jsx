@@ -29,15 +29,9 @@ const TextTitle = styled.p`
     }
 `;
 const ShowcaseContainer = styled.div`
-<<<<<<< HEAD
-  width: 320px;
-  padding: 16px;
-  height: 175px;
-=======
   max-width: 325px;
   width:600px;
   height: 200px;
->>>>>>> f1162b7... Project dynamic
   position: relative;
   display: inline-block;
   color: white;
