@@ -1,9 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-
-import Bio from "../components/bio";
+import styled from 'styled-components';
+import GlitchText from "../components/GlitchText";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import ContentContainer from '../components/StyledComponents/ContentContainer';
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,25 +17,32 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: 'none' }} to={`blog${node.fields.slug}`}>
-                  {title}
+        <ContentContainer>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <PostInfo key={node.fields.slug}>
+
+                <Link style={{ textDecoration: 'none' }} to={`blog${node.fields.slug}`}>
+                  <GlitchText linkable>
+                    {title}
+                  </GlitchText>
                 </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+
+
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </PostInfo>
+            )
+          })}
+        </ContentContainer>
       </Layout>
     )
   }
 }
+const PostInfo = styled.div`
+  margin-bottom: 15px;
+`;
 
 export default BlogIndex;
 

@@ -5,13 +5,20 @@ const primaryColor = '#fff';
 
 const GlitchText = styled.p`
     color: ${primaryColor};
-    font-size: ${props => props.size || '24px'};
+    ${({ size }) => size ? `font-size: ${size}` : 'font-size: 24px'};
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     transform: scale3d(1,1,1);
 
+  ${({ linkable }) => linkable ? `
+    &:hover {
+        color: #FFD700;
+        text-decoration: underline;
+    }
+    `: ''
+  }
     &::before,
     &::after {
         content: '${props => props.children}';
