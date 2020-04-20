@@ -1,20 +1,21 @@
-import React from 'react'
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Content from '../containers/workPage/Content';
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Content from "../containers/workPage/Content";
 import "../containers/indexPage/style.scss";
 
 class WorkPage extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const projects = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const projects = data.allMarkdownRemark.edges;
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={`Work Page`}
-          keywords={[`Nirzhuk`,
+          keywords={[
+            `Nirzhuk`,
             `Blog`,
             `JavaScript Developer`,
             `React Developer`,
@@ -26,11 +27,11 @@ class WorkPage extends React.Component {
         />
         <Content projects={projects} />
       </Layout>
-    )
+    );
   }
 }
 
-export default WorkPage
+export default WorkPage;
 
 export const pageQuery = graphql`
   query {
@@ -40,8 +41,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: {order: DESC, fields: [frontmatter___date]},
-      filter: {fileAbsolutePath: {regex: "content/portfolio/.*.md$/"}}) {
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fileAbsolutePath: { regex: "content/portfolio/.*.md$/" } }
+    ) {
       edges {
         node {
           fileAbsolutePath
@@ -59,4 +61,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
