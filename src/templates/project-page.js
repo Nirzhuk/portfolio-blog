@@ -1,34 +1,29 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 class ProjectPageTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const { date, title, techs, desc } = post.frontmatter;
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteTitle = this.props.data.site.siteMetadata.title;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={title} description={post.excerpt} />
         <h1>{title}</h1>
-        <p>
-          {date}
-        </p>
-        <p>
-          {desc}
-        </p>
+        <p>{date}</p>
+        <p>{desc}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <p>{techs}</p>
       </Layout>
-    )
+    );
   }
 }
 
-export default ProjectPageTemplate
+export default ProjectPageTemplate;
 
 export const pageQuery = graphql`
   query ProjectBySlug($slug: String!) {
@@ -50,4 +45,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
